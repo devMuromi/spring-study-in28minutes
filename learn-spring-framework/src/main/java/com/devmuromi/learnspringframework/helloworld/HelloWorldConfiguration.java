@@ -1,13 +1,15 @@
-package com.devmuromi.learnspringframework;
+package com.devmuromi.learnspringframework.helloworld;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-record Person(String name, int age, Address address) {}
+record Person(String name, int age, Address address) {
+}
 
-record Address(String firstLine, String city) {}
+record Address(String firstLine, String city) {
+}
 
 @Configuration
 public class HelloWorldConfiguration {

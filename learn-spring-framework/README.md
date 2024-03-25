@@ -54,3 +54,8 @@ context.getBeanDefinitionNames()을 통해 모든 Bean의 이름 출력해보기
 @Primary를 통해 같은 이름의 빈중 우선순위를 정해줄 수 있다.
 
 @Qualifier("string") 한정자를 통해 선택할 수 있다.
+
+### 2.15
+Java의 try-with-resource 사용법.
+
+이전의 게임코드들 Bean을 이용해 리펙토링.
