@@ -32,3 +32,18 @@ JDK16에 추가된 record 기능 설명.
 
 ### 2.10
 Bean 단순 메소드 명이 아닌 사용자 지정 이름 지정하기. 이름 말고 클래스 이름 형식으로 이용하기. Bean끼리 재활용 하기? Bean에 매게변수 전달하는 방식.
+
+### 2.11 2.12
+Spring Container: Bean을 관리하는 컨테이너. Bean의 수명 주기를 관리함. 다른 말로 Spring Context, IOC(Inversion of Control) Container라고도 한다.
+
+일컫는 컨테이너는 2가지로 나뉘는데, Bean Factory와 Application Context가 있다. Bean Factory는 가장 기본적인 컨테이너이고, Application Context는 좀더 고급의 기능을 제공한다.
+대부분의 엔터프라이즈 애플리케이션에서는 Application Context를 필요로 하고, 우리도 사용하고 있다. AnnotationConfigApplicationContext이 바로 그것.
+
+### 2.13
+POJO(Plain Old Java Object): 오래된 자바 객체. 모든 자바 객체는 POJO이다. POJO는 Java Bean과 달리 아무 제약이 없다.
+
+Java Bean: 옛날에는 EJB(Enterprise Java Bean)이라는 것이 있었는데, EJB는 Java Bean이라는 개념을 도입했다.
+Java Bean의 규칙으로는 public no-arg constructor, getter/setter 보유, Serializable 인터페이스를 구현해야한다.
+사실 Java Bean은 더이상 중요하지 않은데, 이제 아무도 EJB를 안쓰기 떄문.
+
+Spring Bean: Spring이 관리하는 모든 Java 객체.
