@@ -8,5 +8,8 @@ public class App02HelloWorldSpring {
 
     var str = context.getBean("name");
     System.out.println(str);
+    System.out.println(context.getBean("age"));
+    System.out.println(context.getBean("person"));
+    System.out.println(context.getBean("address"));
     }
 }

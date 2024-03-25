@@ -26,3 +26,7 @@ GamingConsole interface를 도입해 모든 게임이 GamineConsole을 통해 �
 이곳에서 메서드 정의를 통해 Spring Bean을 생성 할수 있는데, Spring Bean이란 Spring에서 관리하는 것들을 말한다.
 
 Configuration에서 name Bean을 만들어보고 이를 사용해보았다. 
+
+### 2.9
+JDK16에 추가된 record 기능 설명.
+
