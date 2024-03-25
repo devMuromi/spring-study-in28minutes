@@ -1,6 +1,9 @@
-package com.devmuromi.learnspringframework.game;
+package com.devmuromi.learnspringframework;
 
-public class AppGamingBasicJava {
+import com.devmuromi.learnspringframework.game.GameRunner;
+import com.devmuromi.learnspringframework.game.PackmanGame;
+
+public class App01GamingBasicJava {
     public static void main(String[] args) {
 //        var game = new MarioGame();
 //        var game = new SuperContraGame();
