@@ -47,3 +47,10 @@ Java Bean의 규칙으로는 public no-arg constructor, getter/setter 보유, Se
 사실 Java Bean은 더이상 중요하지 않은데, 이제 아무도 EJB를 안쓰기 떄문.
 
 Spring Bean: Spring이 관리하는 모든 Java 객체.
+
+### 2.14
+context.getBeanDefinitionNames()을 통해 모든 Bean의 이름 출력해보기.
+
+@Primary를 통해 같은 이름의 빈중 우선순위를 정해줄 수 있다.
+
+@Qualifier("string") 한정자를 통해 선택할 수 있다.
