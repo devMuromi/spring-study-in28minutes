@@ -59,3 +59,6 @@ context.getBeanDefinitionNames()을 통해 모든 Bean의 이름 출력해보기
 Java의 try-with-resource 사용법.
 
 이전의 게임코드들 Bean을 이용해 리펙토링.
+
+### 2.16 2.17
+Spring이 대신 객체를 만들어주지는 못하나? -> 다음장에서 Bean을 더 간단하게 다루는 법에 대해 알아보자.
