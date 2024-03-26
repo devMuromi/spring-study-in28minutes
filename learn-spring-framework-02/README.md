@@ -32,3 +32,24 @@ Field: 리플렉션을 사용하여 의존성을 주입. 그래서 따로 생성
 @ComponentScan에 인자를 주지 않으면 현재 패키지를 스캔한다.
 
 이중 무엇을 사용해야 할까? Spring에서는 일단 생성자 인젝션을 추천한다. 모든 초기화가 하나의 메소드에서 발생하기 떄문.
+
+### 3.29
+용어 정리
+
+@Component: 스프링이 instance를 관리하게 지정
+
+Dependency: Gamerunner는 GameConsole implement가 필요하기에, MarioGame은 GameRunner의 Dependency(의존성)이다.
+
+Component scan: @ComponentScan()에서 패키지 명을 명시하거나 현재 패키지를 스캔하기.
+
+Dependency Injection(DI, 의존성 주입): Spring이 Component scan을 하고 의존성을 찾아 식별하고 와이어링 하는 전 과정을 의미.
+
+Inversion of Control(IoC, 제어의 역전): 객체를 Spring이 생성하고 와이어링 해주듯, 제어권이 개발자에서 Spring으로 넘어간것. 그래서 제어의 역전.
+
+Spring Bean: 스프링이 관리하는 모든 객체
+
+IoC Container: Bean의 생명주기와 의존성을 관리하는 Spring의 컴포넌트. ApplicationContext와 BeanFactory가 있지만 ApplicationContext를 주로 사용한다.
+
+AutoWiring: Spring이 Bean을 보고 자동으로 필요한것을 식별하고 와이어링 해주는 것.
+
+### 3.30
