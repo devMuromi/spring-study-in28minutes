@@ -20,3 +20,15 @@ Qualifier가 Primary보다 우선권을 지니기 때문이다.
 
 @Quilifier 사용에 팁을 주자면, Bean에 @Qualifier("name")이 지정되지 않았을때도 Bean의 class 이름을 사용해도 된다. 단 class의 첫글자는 소문자로 바꿔주어야 한다.
 
+### 3.28
+Spring에서 의존성 주입의 여러 방식
+
+Constructor-based: 생성자를 통해 의존성을 주입하는 방식
+
+Setter-based: Setter를 통해 의존성을 주입하는 방식
+
+Field: 리플렉션을 사용하여 의존성을 주입. 그래서 따로 생성자나 수정자가 없다.
+
+@ComponentScan에 인자를 주지 않으면 현재 패키지를 스캔한다.
+
+이중 무엇을 사용해야 할까? Spring에서는 일단 생성자 인젝션을 추천한다. 모든 초기화가 하나의 메소드에서 발생하기 떄문.
