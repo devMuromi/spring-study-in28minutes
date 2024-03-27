@@ -53,3 +53,19 @@ IoC Container: Bean의 생명주기와 의존성을 관리하는 Spring의 컴�
 AutoWiring: Spring이 Bean을 보고 자동으로 필요한것을 식별하고 와이어링 해주는 것.
 
 ### 3.30
+@Component, @Bean 비교
+
+@Component: 모든 자바 클래스에서 사용 가능
+-> 주로 @Component가 더 이용하기 쉽다. @Bean은 일일이 코드를 다 작성해줘야하기 때문.
+Field, Setter, Constructor로 의존성 주입 가능.
+Spring이 자동으로 Bean을 생성하고 관리한다.
+-> 즉 일반적으로 @Component를 사용하는 것이 더 편리하다. 
+
+@Bean: 특정 메소드에 적용됨. 주로 Spring Configuration 클래스의 메소드에 사용.
+특정 메소드 사용을 통해 의존성 주입 가능.
+Bean 생성 코드를 직접 작성해야 한다.
+
+### 3.31
+Dependency가 많은 이유. 우리는 웹 / 비즈니스 / 데이터 레이어를 두고 어플리케이션을 작성한다. 이들간에 서로 의존성이 있기 떄문.
+
+이를 Spring이 자동으로 해주고, 우리는 핵심 로직에 집중할 수 있다.
