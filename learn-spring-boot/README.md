@@ -9,3 +9,6 @@ start.spring.io로 가서 이것저것 설정.
 
 Dependency로는 Spring Web을 추가한다.
 
+### 5.53: Spring Boot로 간단한 REST API 만들어보기
+환경: CourseController
+
