@@ -171,3 +171,16 @@ CDI 사용을 위해서는 xml에 의존성을 추가해야 한다. 예시는 ma
 
 cdi를 사용하려면 @Component 대신 @Named를 사용하고, @AutoWired 대신 @Inject를 사용한다.
 이런 방식으로 CDI annotation으로 Spring annotation을 대체할 수 있다.
+
+### 3.43: Java Spring XML 설정
+환경: a0을 복사해 h1 생성
+contextConfiguration.xml 추가
+
+```
+    <bean id="name" class="java.lang.String">
+        <constructor-arg value="Muromi"/>
+    </bean>
+```
+위와 같은 방식으로 XML을 통해서도 Bean을 생성할 수 있다. 그 외에도 component scan이나 생성자로 의존성 주입도 가능하다. 자세한건 파일을 참고.
+
+그러나 요즘은 XML이 잘 사용되지 않는다.

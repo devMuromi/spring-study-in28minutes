@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-//@Component
-@Named
+@Component
+//@Named
 class BusinessService {
     DataService dataService;
 
@@ -17,15 +17,15 @@ class BusinessService {
         return dataService;
     }
 
-//    @Autowired
-    @Inject
+    @Autowired
+//    @Inject
     public void setDataService(DataService dataService) {
         System.out.println("Setter Injection");
         this.dataService = dataService;
     }
 }
-//@Component
-@Named
+@Component
+//@Named
 class DataService {
 }
 
