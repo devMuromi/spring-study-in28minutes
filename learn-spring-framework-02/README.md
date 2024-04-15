@@ -72,3 +72,26 @@ Dependency가 많은 이유. 우리는 웹 / 비즈니스 / 데이터 레이어�
 
 ### 3.32
 실습
+
+## Section 4
+### 3.35: @Lazy annotation
+환경: examples/a0을 복사해 d1 생성.
+
+ClassA를 이용해 초기화를 하는 ClassB 클래스가 존재.
+이렇게 ClassA, ClassB를 만들고 실행하면, ClassB Bean을 사용하는 로직이 없음에도 ClassB가 initiallized 되는 것을 볼 수 있다.
+
+이를 막기 위해 @Lazy annotation을 사용할 수 있다.
+@Lazy를 하면 CLassB가 사용되거나 참조될때 초기화가 진행된다.
+
+기본적으로 Spring Bean 기본 초기화는 즉시 초기화(Eager)이다. 보통은 Eager을 권장한다. 오류를 바로 발견할 수 있기 때문.
+
+즉 Lazy는 권장되지 않고 잘 사용되지도 않는다.
+
+@Lazy는 @Component와 @Bean이 있는 대부분에 사용 가능하다.
+이때 실제 의존성대신 Lazy-resolution proxy가 inject된다.
+또한 @Lazy가 @Configuration 클래스에 사용되면 @Configuration 내의 모든 @Bean이 Lazy로 설정된다.
+
+### 3.36: 지연 초기화와 즉시 초기화 비교
+Lazy initialization은 메모리를 조금 덜 소모하는데, 그리하여 잘 사용되지 않는 Bean의 경우에는 Lazy init이 좋을 수도 있다.
+그러나 대부분의 경우 그냥 Eager을 권장.
+
