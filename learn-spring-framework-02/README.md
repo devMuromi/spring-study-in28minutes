@@ -125,3 +125,21 @@ context.getBean(NormalClass.class) 와 같이 호출해보았을때 NormalClass�
 ### 3.38: 프로토타입과 싱글톤 비교하기
 보통은 99.9% 싱글톤이 사용된다.
 Stateful Bean을 사용하려고 할때 사용자 정보가 유지되는 빈을 만들고 싶으면 플로토타입을 사용해야 한다. 그러나 보통 Stateless로 쓰는듯.
+
+### 3.39: @PostConstruct와 @PreDestroy
+환경: a0을 복사해 f1 생성
+
+SomeClass는 SomeDependency를 의존성으로 가지는데, SomeDependency 의존성이 연결되는데로 어떤 초기화를 실행하려면 어떻게 해야할까?
+
+@PostConstruct를 사용하면 된다. 그럼 의존성이 연결되고, 연결이 완료되면 @PostConstruct로 지정해둔 init()이 실행된다.
+
+@PostConstruct를 사용하면 다른 Bean이 해당 Bean을 사용할 수 있게 되기 전에 메소드를 실행시킬 수 있다.
+
+그렇다면 어플리케이션이 종료되기 전에, 컨텍스트에서 Bean이 삭제되기 전에 무언가를 하고 싶다면?
+
+@PreDestroy를 사용하면 된다. @PreDestory는 컨테이너에서 인스턴스를 삭제하는 과정 중에 있음을 알려주는 콜백 알림으로,
+보통 보유하고 있던 리소스를 해제하는데 일반적으로 사용된다.
+
+@PostConstruct는 데이터베이스 등에서 데이터를 가죠오려는 경우 등에 사용할 수 있고,
+@PreDestroy는 컨테이너(어플리케이션 컨텍스트)에서 빈이 삭제되기 전에 cleanUp등을 수행하고 싶을때 사용 가능하다. 활성화된 연결을 끊는 다던가...
+
