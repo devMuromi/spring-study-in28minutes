@@ -184,3 +184,39 @@ contextConfiguration.xml 추가
 위와 같은 방식으로 XML을 통해서도 Bean을 생성할 수 있다. 그 외에도 component scan이나 생성자로 의존성 주입도 가능하다. 자세한건 파일을 참고.
 
 그러나 요즘은 XML이 잘 사용되지 않는다.
+
+### 3.44: 자바 어노테이션 vs XML 설정
+
+### 3.45: Spring Stereotype 어노테이션
+이떄까지는 @Component를 사용했다. @Component는 제네릭 어노테이션으로, 모든 클래스에 적용 가능하기 때문.
+
+- @Service: 클래스에 비즈니스 로직이 있음을 나타냄.
+- @Controller: 웹 컨트롤러 클래스에 사용
+- @Repository: 데이터베이스와 통신하는 경우
+
+@Component, @Service, @Controller, @Repository를 Stereotype 어노테이션이라고 한다.
+
+이떄 최대한 구체적인 어노테이션을 사용하는 것을 권장한다. 프레임워크에 자신이 의도한 바를 더 나타낼 수 있기 때문.
+이후 AOP(관점 지향 프로그래밍)을 이용해 부가적인 동작을 추가할 수 있다.
+
+### 3.46: Spring Annotation 정리
+- @Configuration: 클래스가 @Bean을 하나 이상 선언함을 나타냄. Java 설정 파일을 만든다는 것.
+Java 설정 파일에서는 메서드를 몇 개든 정의할 수 있고, 이러한 메소드에 @Bean 어노테이션을 추가할 수 있다.
+그러면 Spring이 모든 메소드 반환 값에 대해 Bean을 자동으로 생성한다.
+- @ComponentScan: 컴포넌트를 스캔할 특정 패키지를 정의.
+- @Bean
+- @Component: 어노테이션 한 클래스가 컴포넌트임을 나타냄. 해당 컴포넌트가 ComponentScan에 들어가면 Bean이 생성 됨.
+- @Service
+- @Controller
+- @Repository
+
+
+- @Primary: 여러 Bean이 단일 값 의존성에 자동 연결될 후보일때 Bean에 우선순위를 부여함.
+- @Qualifier: 여러 Bean이 단일 값 의존성에 자동 연결될 후보일때 특정 Bean을 선택함.
+- @Lazy: Bean이 필요할 때까지 초기화를 지연시킴.
+- @Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE): Bean을 프로토타입으로 정의.
+- @PostConstruct: 의존성 주입이 완료된 후 메소드를 실행함.
+- @PreDestroy: 컨테이너나 Spring IoC Context에서 Bean이 삭제되기 전에 메소드를 호출함.
+- @Named: CDI 어노테이션을 구현하는 규격으로 @Component와 유사
+- @Inject: CDI 어노테이션을 구현하는 규격으로 @Autowired와 유사
+
