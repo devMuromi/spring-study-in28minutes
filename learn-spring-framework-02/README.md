@@ -154,3 +154,20 @@ Jakarta EE에 속하는 것
 - Jakarta Persistence API(JPA): ORM(Object-Relational Mapping) 규격
 
 Spring 6와 Spring Boot에서는 Jakarta EE를 지원한다.
+
+### 3.41: Jakarta CDI(Contexts & Dependency Injection)
+환경: a0을 복사해 g1 생성
+
+의존성 주입을 위한 인터페이스. 단지 인터페이스일 뿐이고 구현은 Spring에서 한다. 
+
+CDI 사용을 위해서는 xml에 의존성을 추가해야 한다. 예시는 maven의 pom.xml을 사용하는 방식.
+```
+<dependency>
+    <groupId>jakarta.inject</groupId>
+    <artifactId>jakarta.inject-api</artifactId>
+    <version>2.0.1</version>
+</dependency>
+```
+
+cdi를 사용하려면 @Component 대신 @Named를 사용하고, @AutoWired 대신 @Inject를 사용한다.
+이런 방식으로 CDI annotation으로 Spring annotation을 대체할 수 있다.
