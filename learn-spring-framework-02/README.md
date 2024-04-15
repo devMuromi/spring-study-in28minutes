@@ -74,7 +74,7 @@ Dependency가 많은 이유. 우리는 웹 / 비즈니스 / 데이터 레이어�
 실습
 
 ## Section 4
-### 3.35: @Lazy annotation
+### 4.35: @Lazy annotation
 환경: examples/a0을 복사해 d1 생성.
 
 ClassA를 이용해 초기화를 하는 ClassB 클래스가 존재.
@@ -91,11 +91,11 @@ ClassA를 이용해 초기화를 하는 ClassB 클래스가 존재.
 이때 실제 의존성대신 Lazy-resolution proxy가 inject된다.
 또한 @Lazy가 @Configuration 클래스에 사용되면 @Configuration 내의 모든 @Bean이 Lazy로 설정된다.
 
-### 3.36: 지연 초기화와 즉시 초기화 비교
+### 4.36: 지연 초기화와 즉시 초기화 비교
 Lazy initialization은 메모리를 조금 덜 소모하는데, 그리하여 잘 사용되지 않는 Bean의 경우에는 Lazy init이 좋을 수도 있다.
 그러나 대부분의 경우 그냥 Eager을 권장.
 
-### 3.37: 스코프 - 프로토타입과 싱글톤
+### 4.37: 스코프 - 프로토타입과 싱글톤
 환경: a0을 복사해 e1 생성
 
 @Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE) 처럼 작성하면 클래스가 프로토타입 클래스가 된다.
@@ -122,11 +122,11 @@ context.getBean(NormalClass.class) 와 같이 호출해보았을때 NormalClass�
 
 만약 JVM당 Spring IoC 컨테이너가 하나라면 같은 의미라고 볼 수 있지만, 컨테이너를 여러개 실행하면 다른 의미가 된다. 그러나 보통 여러개를 실행하지는 않는다.
 
-### 3.38: 프로토타입과 싱글톤 비교하기
+### 4.38: 프로토타입과 싱글톤 비교하기
 보통은 99.9% 싱글톤이 사용된다.
 Stateful Bean을 사용하려고 할때 사용자 정보가 유지되는 빈을 만들고 싶으면 플로토타입을 사용해야 한다. 그러나 보통 Stateless로 쓰는듯.
 
-### 3.39: @PostConstruct와 @PreDestroy
+### 4.39: @PostConstruct와 @PreDestroy
 환경: a0을 복사해 f1 생성
 
 SomeClass는 SomeDependency를 의존성으로 가지는데, SomeDependency 의존성이 연결되는데로 어떤 초기화를 실행하려면 어떻게 해야할까?
@@ -143,7 +143,7 @@ SomeClass는 SomeDependency를 의존성으로 가지는데, SomeDependency 의�
 @PostConstruct는 데이터베이스 등에서 데이터를 가죠오려는 경우 등에 사용할 수 있고,
 @PreDestroy는 컨테이너(어플리케이션 컨텍스트)에서 빈이 삭제되기 전에 cleanUp등을 수행하고 싶을때 사용 가능하다. 활성화된 연결을 끊는 다던가...
 
-### 3.40: J2EE, Java EE, Jakarta EE의 역사
+### 4.40: J2EE, Java EE, Jakarta EE의 역사
 Jakarta EE에 속하는 것
 - Jakarta Server Page(JSP): 웹앱의 뷰 제작
 - Jakarta Standard Tag Library(JSTL): 웹 페이지에 동적 정보를 나타낼 떄 사용하는 태그 라이브러리
@@ -155,7 +155,7 @@ Jakarta EE에 속하는 것
 
 Spring 6와 Spring Boot에서는 Jakarta EE를 지원한다.
 
-### 3.41: Jakarta CDI(Contexts & Dependency Injection)
+### 4.41: Jakarta CDI(Contexts & Dependency Injection)
 환경: a0을 복사해 g1 생성
 
 의존성 주입을 위한 인터페이스. 단지 인터페이스일 뿐이고 구현은 Spring에서 한다. 
@@ -172,7 +172,7 @@ CDI 사용을 위해서는 xml에 의존성을 추가해야 한다. 예시는 ma
 cdi를 사용하려면 @Component 대신 @Named를 사용하고, @AutoWired 대신 @Inject를 사용한다.
 이런 방식으로 CDI annotation으로 Spring annotation을 대체할 수 있다.
 
-### 3.43: Java Spring XML 설정
+### 4.43: Java Spring XML 설정
 환경: a0을 복사해 h1 생성
 contextConfiguration.xml 추가
 
@@ -185,9 +185,9 @@ contextConfiguration.xml 추가
 
 그러나 요즘은 XML이 잘 사용되지 않는다.
 
-### 3.44: 자바 어노테이션 vs XML 설정
+### 4.44: 자바 어노테이션 vs XML 설정
 
-### 3.45: Spring Stereotype 어노테이션
+### 4.45: Spring Stereotype 어노테이션
 이떄까지는 @Component를 사용했다. @Component는 제네릭 어노테이션으로, 모든 클래스에 적용 가능하기 때문.
 
 - @Service: 클래스에 비즈니스 로직이 있음을 나타냄.
@@ -199,7 +199,7 @@ contextConfiguration.xml 추가
 이떄 최대한 구체적인 어노테이션을 사용하는 것을 권장한다. 프레임워크에 자신이 의도한 바를 더 나타낼 수 있기 때문.
 이후 AOP(관점 지향 프로그래밍)을 이용해 부가적인 동작을 추가할 수 있다.
 
-### 3.46: Spring Annotation 정리
+### 4.46: Spring Annotation 정리
 - @Configuration: 클래스가 @Bean을 하나 이상 선언함을 나타냄. Java 설정 파일을 만든다는 것.
 Java 설정 파일에서는 메서드를 몇 개든 정의할 수 있고, 이러한 메소드에 @Bean 어노테이션을 추가할 수 있다.
 그러면 Spring이 모든 메소드 반환 값에 대해 Bean을 자동으로 생성한다.
@@ -220,7 +220,7 @@ Java 설정 파일에서는 메서드를 몇 개든 정의할 수 있고, 이러
 - @Named: CDI 어노테이션을 구현하는 규격으로 @Component와 유사
 - @Inject: CDI 어노테이션을 구현하는 규격으로 @Autowired와 유사
 
-### 3.47: Spring Framework 개념 복습
+### 4.47: Spring Framework 개념 복습
 - Dependency Injection: 의존성을 Bean에 연결하는 것. 제어의 역전이라고도 한다.
 - 의존성 주입의 방식들
   - Constructor Injection: 생성자를 통해 의존성을 주입하는 방식
@@ -232,7 +232,7 @@ Java 설정 파일에서는 메서드를 몇 개든 정의할 수 있고, 이러
 - Spring Beans: Spring이 관리하는 모든 객체
 - Auto-wiring: Spring이 Bean을 보고 자동으로 필요한 것을 식별하고 와이어링 하는 것
 
-### 3.48: Spring 전체 구조 알아보기
+### 4.48: Spring 전체 구조 알아보기
 Spring core: Spring의 핵심 기능들 무언가?
 - Spring Modules: 스프링의 핵심 기능들은 코어 모듈에서 제공한다.
   - Spring MVC
