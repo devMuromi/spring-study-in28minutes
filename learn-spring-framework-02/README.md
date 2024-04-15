@@ -143,3 +143,14 @@ SomeClass는 SomeDependency를 의존성으로 가지는데, SomeDependency 의�
 @PostConstruct는 데이터베이스 등에서 데이터를 가죠오려는 경우 등에 사용할 수 있고,
 @PreDestroy는 컨테이너(어플리케이션 컨텍스트)에서 빈이 삭제되기 전에 cleanUp등을 수행하고 싶을때 사용 가능하다. 활성화된 연결을 끊는 다던가...
 
+### 3.40: J2EE, Java EE, Jakarta EE의 역사
+Jakarta EE에 속하는 것
+- Jakarta Server Page(JSP): 웹앱의 뷰 제작
+- Jakarta Standard Tag Library(JSTL): 웹 페이지에 동적 정보를 나타낼 떄 사용하는 태그 라이브러리
+- Jakarta Enterprise Beans(EJB)
+- Jakarta RESTful Web Services(JAX-RS): 웹 서비스 구축 방법 규격
+- Jakarta Bean Validation: Bean 유효성 검사 규격
+- Jakarta Contexts and Dependency Injection(CDI): 의존성 주입 규격
+- Jakarta Persistence API(JPA): ORM(Object-Relational Mapping) 규격
+
+Spring 6와 Spring Boot에서는 Jakarta EE를 지원한다.
