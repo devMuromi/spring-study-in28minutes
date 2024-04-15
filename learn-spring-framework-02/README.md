@@ -220,3 +220,39 @@ Java 설정 파일에서는 메서드를 몇 개든 정의할 수 있고, 이러
 - @Named: CDI 어노테이션을 구현하는 규격으로 @Component와 유사
 - @Inject: CDI 어노테이션을 구현하는 규격으로 @Autowired와 유사
 
+### 3.47: Spring Framework 개념 복습
+- Dependency Injection: 의존성을 Bean에 연결하는 것. 제어의 역전이라고도 한다.
+- 의존성 주입의 방식들
+  - Constructor Injection: 생성자를 통해 의존성을 주입하는 방식
+  - Setter Injection: Setter를 통해 의존성을 주입하는 방식
+  - Field Injection: 리플렉션을 사용하여 의존성을 주입하는 방식
+- IOC Container: Spring Bean의 수명을 책임지는 Spring IoC Context
+  - Bean Factory: Basic Spring IOC Container
+  - Application Context: Bean Factory를 확장한 인터페이스. 대부분 이걸 사용.
+- Spring Beans: Spring이 관리하는 모든 객체
+- Auto-wiring: Spring이 Bean을 보고 자동으로 필요한 것을 식별하고 와이어링 하는 것
+
+### 3.48: Spring 전체 구조 알아보기
+Spring core: Spring의 핵심 기능들 무언가?
+- Spring Modules: 스프링의 핵심 기능들은 코어 모듈에서 제공한다.
+  - Spring MVC
+  - Spring WebFlux: Reactive Application을 위한 모듈
+  - JDBC, JPA
+  - JMS: integration
+  - Mock Objects, Spring MVC Test
+
+
+- Spring Projects:
+  - Spring Framework
+  - Spring Security
+  - Spring Data: DB integration
+  - Spring Integration: 다른 앱과 통합. MSA.
+  - Spring Cloud
+
+Spring Projects > Spring Framework > Spring Modules
+
+스프링의 장점
+- 느슨한 결합
+- 보일러플레이트 코드를 줄임
+- 아키텍처 유연성
+- 시간에 따라 지속적으로 발전
