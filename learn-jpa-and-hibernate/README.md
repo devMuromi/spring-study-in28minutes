@@ -32,3 +32,12 @@ JDBC를 사용해보니 쿼리를 직접 작성해야해서 점점더 복잡해�
 이떄 @Entity 로 엔티티임을 보이고, @Id, @Column등을 이용해 값들도 맵핑한다. 이때 사실 이름이 같다면 굳이 @Column(name="")을 사용하지 않아도 된다.
 
 CourseJpaRepository를 생성하고 EntityManager를 불러와, merge(), find(), remove() 등을 사용해 구현했다.
+
+### 6.74: Spring Data JPA
+환경: CourseSpringDataJpaRespository 생성
+
+Spring Data JPA를 쓰면 EntityManager 마저 없이 JPA를 더 쉽게 사용 가능하다.
+
+CourseSpringDataJpaRespository는 인터페이스로 JpaRepository<엔티티, id타입>을 상속받아 사용한다.
+
+이때 러너에서 insert() -> save()로 함수만 바꿔주자.
