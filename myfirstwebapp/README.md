@@ -9,3 +9,7 @@ Spring Framework, Spring Boot, Hibernate를 이용하여 Java Web Application을
 ### 7.82: HTML 응답하기
 하드코딩 하니 불편하다 -> 다음번엔 View를 써보자
 
+### 7.85: JSP
+환경: resources/META-INF/resources/WEB-INF/views/sayHello.jsp 생성
+
+JSP 컴파일을 위해 dependency애 tomcat-emded-jasper 추가
