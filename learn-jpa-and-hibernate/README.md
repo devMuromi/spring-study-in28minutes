@@ -17,3 +17,8 @@ JdbcTemplate을 이용해 사용 가능.
 
 ### 6.70: Spring JDBC로 데이터 삽입/삭제 하기
 springJdbcTemplate.update 시 쿼리문에 들어갈 자리를 '?' 로 해두고, 두번째 인자부터 값을 넣어주면 동적으로 변하는 쿼리를 만들 수 있다.
+
+### 6.71: Spring JDBC로 데이터 조회하기
+.queryForObject()를 쿼리로 결과가 하나만 나오는 경우 사용 가능.
+
+이때 두번째 파라메터에는 RowMapper를 넣어주어야 한다. RowMapper는 쿼리 결과를 Bean으로 매핑해주는 역할을 한다.
