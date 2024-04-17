@@ -9,7 +9,11 @@
 </head>
 <body>
 <div>
-    ${todos}
+    <div>Hi ${name} here is your todo</div>
+    <div>
+        ${todos}
+    </div>
+
 </div>
 </body>
 </html>
