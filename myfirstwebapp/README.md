@@ -32,3 +32,16 @@ JSP 컴파일을 위해 dependency애 tomcat-emded-jasper 추
     logger.debug("Request Param is {}", name);
 ```
 
+### 7.90: Dispatcher Servlet, 아키텍처
+과거의 JSP 사용 방법들
+- Model1 Architecture: 컨트롤러 분리등 없이 JSP에 다 떄려박았던 시절
+- Model2 Architecture: MVC 구조를 만들었다. 그러나 모든 서블렛에 걸쳐 구현해야 하는 기능들이 있다면?
+- Model2 Architecture with Front Controller: Front Controller를 만들어서 모든 요청을 한곳에서 처리하자. 이후 적절히 뷰나 서블릿으로 보낸다.
+
+Dispatcher Servlet은 모델2 프론트 컨트롤러 패턴의 Spring MVC 구현물이다.
+
+디스패쳐 서블릿이 프론트 컨트롤러 역할을 한다. 즉 모든 요청을 받아, 처리한다. URL을 보고, 뭐 그런것들. 그리고 적절한 컨트롤러에게 요청을 넘긴다.
+
+그러면 컨트롤러 메서드는 모델과 뷰 이름을 리턴하고, 디스페쳐 서블릿은 뷰 이름을 보고 적절한 뷰를 식별해서 맵핑한다. 그 다음 모델을 찾아 뷰에게 제공한다. 이후 뷰 실행.
+
+이때 적절한 jsp 파일?을 찾는걸 View Resolver가 한다.
