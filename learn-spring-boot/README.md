@@ -46,6 +46,8 @@ Bean반환시에 json으로 자동변환 되는것도 JacksonHttpMessageConverte
 ### 5.57: Spring Boot DevTools
 개발자 편의를 위해 서버 자동 재시작등의 기능을 제공한다. 다만 pom.xml등을 변경하면 수동 재시작이 필요하다.
 
+org.springframework.boot:spring-boot-devtools를 추가해서 사용 할 수 있다.
+
 ### 5.58: Profile
 Dev, QA, stage, prod등의 환경들의 설정을 관리할 수 있다.
 
@@ -71,3 +73,16 @@ dev 환경 설정을 위해 application-dev.properties 처럼 새 파일을 만�
 요즘은 Embedded Server를 사용한다. JAR에 Tomcat과 같은 서버를 내장하고 있어서, 자바만 설치하면 된다.
 
 Spring Boot는 여러 Embedded 서버를 지원하는데, 디폴트는 spring-boot-starter-tomcat 이다.
+
+### 5.61: Spring Boot Actuator
+어플리케이션을 모니터할 수 있다.
+
+여러 엔드포인트를 제공하는데, beans, health, metrics, mappings 등이다.
+
+사용을 위해 pom.xml에서 spring-boot-starter-actuator을 추가한다.
+Gradle 기준으로는 implementation 'org.springframework.boot:spring-boot-starter-actuator' 추가하기
+
+이후 http://localhost:8080/actuator 로 접속해 사용 가능하다.
+
+Actuator은 기본적으로 health만 보여주고, 다른 기능을 사용하고 싶으면 application.properties에 설정을 추가해야 한다.
+
