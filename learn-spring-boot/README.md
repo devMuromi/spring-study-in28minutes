@@ -32,3 +32,14 @@ pom.xml을 보면 spring-boot-starter-web과 spring-boot-starter-test가 있다.
 
 이것들이 json 변환, 톰캣, 테스트~ 뭔가 많은것들을 해준다. 아주 편리한 의존성 디스크립터이다.
 즉 Rest API를 사용할 거라면 Spring Boot Starter Web을 사용하면 된다.
+
+### 5.56: Spring Boot Auto Configuration
+스프링 부트를 사용할때는 많이 설정을 해주어야 한다.
+이를 간소화하기 위해 Auto Configuration을 사용할 수 있다.
+
+해당 로직은 Maven에선 Maven Dependencies의 spring-boot-autoconfigure.jar에 있다.
+
+이런 설정에 대해 추가로 설정을 해야한다면 application.properties에 설정을 추가하면 된다.
+
+Bean반환시에 json으로 자동변환 되는것도 JacksonHttpMessageConvertersConfiguration 덕이다.
+
