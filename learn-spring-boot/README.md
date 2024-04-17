@@ -62,3 +62,12 @@ dev 환경 설정을 위해 application-dev.properties 처럼 새 파일을 만�
 설정을 위해 @ConfigurationProperties를 추가한다. 이때 스프링으로 관리할 것이니 @Component도 추가한다.
 
 이제 이 값을 application.properties에 설정하면 된다.
+
+### 5.60: Embedded Server
+배포를 간소화 하는 방법.
+
+옛날에는 WAR 방식을 사용했다. 자바를 설치하고 웹서버를 설치하고 WAR을 배포한다.
+
+요즘은 Embedded Server를 사용한다. JAR에 Tomcat과 같은 서버를 내장하고 있어서, 자바만 설치하면 된다.
+
+Spring Boot는 여러 Embedded 서버를 지원하는데, 디폴트는 spring-boot-starter-tomcat 이다.
