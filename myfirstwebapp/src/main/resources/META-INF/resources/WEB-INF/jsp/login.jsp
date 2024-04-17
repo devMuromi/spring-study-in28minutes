@@ -5,7 +5,14 @@
     <title>Login Page</title>
 </head>
 <body>
-login~~
-Hello ${name}
+Welcome to login page!
+    <pre>
+        ${errorMessage}
+    </pre>
+    <form method="post">
+        <input type="text" name="name" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="login">
+    </form>
 </body>
 </html>
