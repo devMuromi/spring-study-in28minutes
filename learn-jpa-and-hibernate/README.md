@@ -44,3 +44,14 @@ CourseSpringDataJpaRespository는 인터페이스로 JpaRepository<엔티티, id
 
 ### 6.75: Spring Data JPA 커스텀 메소드
 커스텀 메서드도 정의할 수 있다. 명명규칙을 따라 메소드를 만들어주자.
+
+### 6.76: JPA와 Hibernate의 차이
+- JPA: 기술 명세, 인터페이스와 비슷. 엔티티가 무엇인지 정의하는 방식을 정의
+  - @Entity(), @Id(), @Column()
+  - 객체를 테이블로 맵핑하는 방식을 정의
+- Hibernate: JPA를 구현한 구현체
+
+Entity 사용시 jakarta.persistence가 아닌 org.hibernate.annotations를 사용하면 Hibernate를 직접 사용하는 것.
+그러나 우리는 JPA를 사용하는 것이다. 그리고 Hibernate JAR을 클래스 경로에 추가해 Hibernate를 JPA 구현체로 쓰는것.
+
+바로 Hibernate를 사용하지 않는 건 Hibernate로 한정해서 쓰고 싶지 않기 때문.
