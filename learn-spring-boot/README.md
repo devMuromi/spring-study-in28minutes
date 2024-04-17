@@ -53,3 +53,12 @@ dev 환경 설정을 위해 application-dev.properties 처럼 새 파일을 만�
 
 기본적으로 애플리케이션은 프로필을 사용하지 않고 그러면 기본 application.properties를 사용한다.
 프로필 설정을 위해서는 application.properties에 spring.profiles.active=dev를 추가하면 된다.
+
+### 5.59: ConfigurationProperties
+환경: CurrencyServiceConfiguration, CurrencyConfigurationController class 생성
+
+프로퍼티 값을 설정하고 Spring boot app에서 사용하는 법. 이를 위해 configure property를 사용할 수 있다.
+
+설정을 위해 @ConfigurationProperties를 추가한다. 이때 스프링으로 관리할 것이니 @Component도 추가한다.
+
+이제 이 값을 application.properties에 설정하면 된다.
