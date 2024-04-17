@@ -43,3 +43,13 @@ pom.xml을 보면 spring-boot-starter-web과 spring-boot-starter-test가 있다.
 
 Bean반환시에 json으로 자동변환 되는것도 JacksonHttpMessageConvertersConfiguration 덕이다.
 
+### 5.57: Spring Boot DevTools
+개발자 편의를 위해 서버 자동 재시작등의 기능을 제공한다. 다만 pom.xml등을 변경하면 수동 재시작이 필요하다.
+
+### 5.58: Profile
+Dev, QA, stage, prod등의 환경들의 설정을 관리할 수 있다.
+
+dev 환경 설정을 위해 application-dev.properties 처럼 새 파일을 만들어서 설정 가능하다. Pord를 위해선 application-prod 등...
+
+기본적으로 애플리케이션은 프로필을 사용하지 않고 그러면 기본 application.properties를 사용한다.
+프로필 설정을 위해서는 application.properties에 spring.profiles.active=dev를 추가하면 된다.
