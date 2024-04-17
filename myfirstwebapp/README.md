@@ -6,4 +6,6 @@ Spring Framework, Spring Boot, Hibernate를 이용하여 Java Web Application을
 
 @RequestMapping("/hello") 맵핑을 이용해 hello-world 생성. 이때 그냥 스트링을 리턴하면 뷰 이름으로 인식해 @ResponseBody를 해줘야 한다.
 
-###
+### 7.82: HTML 응답하기
+하드코딩 하니 불편하다 -> 다음번엔 View를 써보자
+
