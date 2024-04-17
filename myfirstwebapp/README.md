@@ -24,3 +24,11 @@ JSP 컴파일을 위해 dependency애 tomcat-emded-jasper 추
 
 컨트롤러에서 jsp로 뭔가를 전달할 때 Model을 이용해 데이터를 전달할 수 있다. ModelMap 사용.
 
+### 7.89: Logging
+적절한 로깅 레벨 선택법과, 로거 사용법. 기본적으로 스트링 부트는 SLF4j를 사용한다.
+
+```
+    private Logger logger = LoggerFactory.getLogger(LoginController.class);
+    logger.debug("Request Param is {}", name);
+```
+
