@@ -86,3 +86,14 @@ Gradle 기준으로는 implementation 'org.springframework.boot:spring-boot-star
 
 Actuator은 기본적으로 health만 보여주고, 다른 기능을 사용하고 싶으면 application.properties에 설정을 추가해야 한다.
 
+### 5.62
+- Spring Framework: 그냥 의존성 주입
+  - @Component, @Autowired, ComponentScan etc..
+  - 이것만으로는 강력한 앱을 만들 수 없고, JPA/Hibernate, JUnit, 암튼 여러 Spring modules, Spring projects로 Spring을 확장해야 한다.
+- Spring MVC: Spring Module로, REST API의 과정을 간소화한다.
+  - @Controller, @RestController, @RequestMapping("/api/v1/courses")
+- Spring Boot: Sptring Project로, 프로덕션 가능한 앱을 빠르게 만드는 것을 목적으로 한다.
+  - Starter Projects
+  - Auto configuration
+
+### 5.63: 복습
