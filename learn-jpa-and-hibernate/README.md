@@ -14,3 +14,6 @@ JDBC를 사용할때도 SQL 쿼리를 사용한다.
 JdbcTemplate을 이용해 사용 가능.
 
 어플리케이션 실행시 CommandLineRunner 을 클래스가 implements하면 run 메소드를 실행한다.
+
+### 6.70: Spring JDBC로 데이터 삽입/삭제 하기
+springJdbcTemplate.update 시 쿼리문에 들어갈 자리를 '?' 로 해두고, 두번째 인자부터 값을 넣어주면 동적으로 변하는 쿼리를 만들 수 있다.

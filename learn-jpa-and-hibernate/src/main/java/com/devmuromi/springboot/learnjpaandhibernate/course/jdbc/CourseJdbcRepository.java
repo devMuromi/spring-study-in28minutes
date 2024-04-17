@@ -1,5 +1,6 @@
 package com.devmuromi.springboot.learnjpaandhibernate.course.jdbc;
 
+import com.devmuromi.springboot.learnjpaandhibernate.course.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -13,10 +14,14 @@ public class CourseJdbcRepository {
     private static String INSERT_QUERY =
             """
                 INSERT INTO course(id, name, author)
-                VALUES(1, 'Learn Spring', 'Muromi');
+                VALUES(?, ?, ?);
             """;
 
-    public void insert() {
-        springJdbcTemplate.update(INSERT_QUERY);
+    public void insert(Course course) {
+        springJdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
+    }
+
+    public void deleteById(long id) {
+        springJdbcTemplate.update("DELETE FROM course WHERE id = ?", id);
     }
 }
