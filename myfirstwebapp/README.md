@@ -17,3 +17,10 @@ JSP 컴파일을 위해 dependency애 tomcat-emded-jasper 추
 ### 7.86: login 제작
 환경: LoginController 생성
 
+### 7.87: 웹의 작동방식 Request/Response
+
+### 7.88: Query Parameter, Model
+@RequestParam로 파라미터를 받아올 수 있다.
+
+컨트롤러에서 jsp로 뭔가를 전달할 때 Model을 이용해 데이터를 전달할 수 있다. ModelMap 사용.
+
