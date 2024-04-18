@@ -66,3 +66,4 @@ method 방식에 따라 다르게 처리 하기.
 ### 7.97: JSTL
 이때까지는 Expression Language로 ${}만을 jsp에서 사용했다. 더 복잡한 사용을 위해 JSTL 사용하기.
 
+### 7.98: Webjars로 Bootstrap 사용하기
