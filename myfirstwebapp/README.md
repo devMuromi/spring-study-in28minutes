@@ -99,3 +99,12 @@ InMemoryUserDetailsManager와 BCryptPasswordEncoder를 이용해 사용자 인�
 ### 7.115: 하드코드 리팩토링
 
 ### 7.116: Create multiple user
+
+### 7.117, 7.118: H2
+spring-boot-starter-data-jpa 추가
+
+이때 Spring Security와 함께 h2-console을 사용하기 위해 추가 설정이 필요하다.
+- CSRF 비활성화
+- Frames 허용
+
+이를 위해 요청이 들어왔을때 filter하는 SecurityFilterChain을 수정한다.
