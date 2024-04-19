@@ -82,3 +82,4 @@ spring-boot-starter-validation 추가
 ### 7.104: Validation 추가 
 @Valid 추가, BindingResult 추가
 
+### 7.105: Delete todo
