@@ -24,3 +24,8 @@ Json으로 변환되는 과정
 @PathVariable 를 매게변수에 붙이면 URI의 일부를 매개변수로 받을 수 있다
 
 ### 8.135: User Bean, Dao 생성
+
+### 8.137: User get 요청 구현
+
+### 8.138: User post 요청 구현
+@RequestBody를 통해 웹 요청의 body와 매게변수를 맵핑한다.
