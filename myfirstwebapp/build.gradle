@@ -25,6 +25,7 @@ dependencies {
 	implementation 'org.webjars:jquery:3.6.0'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.webjars:bootstrap-datepicker:1.7.1'
+	implementation "org.springframework.boot:spring-boot-starter-security"
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
