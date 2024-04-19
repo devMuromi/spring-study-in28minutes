@@ -108,3 +108,8 @@ spring-boot-starter-data-jpa 추가
 - Frames 허용
 
 이를 위해 요청이 들어왔을때 filter하는 SecurityFilterChain을 수정한다.
+
+### 7.119: Todo Entity 제작
+@Entity -> Bean이 DB 테이블에 맵핑할 수 있게 해줌.
+
+data.sql의 내용은 기본적으로 엔티티가 제작되기 전에 시작됨으로 설정 수정이 필요.
