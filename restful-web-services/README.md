@@ -48,3 +48,5 @@ Spring의 예외 처리는 ResponseStatusExceptionHandler가 담당한다.
 org.springframework.boot:spring-boot-starter-validation 추가
 
 매게변수에 @Valid, entity field에 @Size, @Past 등 설정 
+
+### 8.148: Open API, Swagger
