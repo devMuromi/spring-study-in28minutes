@@ -41,3 +41,6 @@ UserNotFoundException 제작, @ResponseStatus(code = HttpStatus.NOT_FOUND)로 ex
 ### 8.142: Exception Handling advance
 Spring의 예외 처리는 ResponseStatusExceptionHandler가 담당한다.
 이를 오버라이드해 우리가 정의한 구조가 반환되게 해야 한다.
+
+### 8.143: User delete 요청 구현
+
