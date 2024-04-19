@@ -74,6 +74,11 @@ method 방식에 따라 다르게 처리 하기.
 
 ### 7.102: Todo create Service logic 추가
 
+### 7.103: String Boot Starter Validation
+spring-boot-starter-validation 추가
 
+커맨드 빈(양식보조개체): 양방향 바인딩 form을 위함
 
+### 7.104: Validation 추가 
+@Valid 추가, BindingResult 추가
 
