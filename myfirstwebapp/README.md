@@ -95,3 +95,7 @@ spring-boot-starter-security 추가
 
 ### 7.114: Spring Security
 InMemoryUserDetailsManager와 BCryptPasswordEncoder를 이용해 사용자 인증을 추가한다.
+
+### 7.115: 하드코드 리팩토링
+
+### 7.116: Create multiple user
