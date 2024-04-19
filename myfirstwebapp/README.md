@@ -115,3 +115,5 @@ spring-boot-starter-data-jpa 추가
 data.sql의 내용은 기본적으로 엔티티가 제작되기 전에 시작됨으로 설정 수정이 필요.
 
 ### 7.120: JPA Repository
+
+### 7.121: Controller refactoring

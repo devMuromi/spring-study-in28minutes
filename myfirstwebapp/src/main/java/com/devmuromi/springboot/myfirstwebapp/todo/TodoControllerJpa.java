@@ -18,14 +18,11 @@ import java.util.List;
 @SessionAttributes("name")
 public class TodoControllerJpa {
 
-    public TodoControllerJpa(TodoService todoService, TodoRepository todoRepository) {
+    public TodoControllerJpa(TodoRepository todoRepository) {
         super();
-        this.todoService = todoService;
         this.todoRepository = todoRepository;
     }
-
-    private TodoService todoService;
-
+    
     private TodoRepository todoRepository;
 
     @RequestMapping(value = "/list-todos")
@@ -51,20 +48,24 @@ public class TodoControllerJpa {
         if (result.hasErrors()) {
             return "todo";
         }
-        String username = (String) model.get("name");
-        todoService.addTodo(username, todo.getDescription(), LocalDate.now().plusYears(1), false);
+        String username = getLoggedInUserName();
+        todo.setUsername(username);
+        todoRepository.save(todo);
+//        todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), todo.isDone());
         return "redirect:list-todos";
     }
 
     @RequestMapping(value = "/delete-todo")
     public String deleteTodo(@RequestParam int id) {
-        todoService.deleteById(id);
+        todoRepository.deleteById(id);
+//        todoService.deleteById(id);
         return "redirect:list-todos";
     }
 
     @RequestMapping(value = "/update-todo", method = RequestMethod.GET)
     public String showUpdateTodoPage(@RequestParam int id, ModelMap model) {
-        Todo todo = todoService.findById(id);
+        Todo todo = todoRepository.findById(id).get(); // findById는 Optional을 return해서 get()으로 꺼내야 한다
+//        Todo todo = todoService.findById(id);
         model.addAttribute("todo", todo);
         return "todo";
     }
@@ -76,8 +77,8 @@ public class TodoControllerJpa {
         }
         String username = getLoggedInUserName();
         todo.setUsername(username);
-        todoService.updateTodo(todo);
-
+        todoRepository.save(todo);
+//        todoService.updateTodo(todo);
         return "redirect:list-todos";
     }
 
