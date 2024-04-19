@@ -28,4 +28,10 @@ Json으로 변환되는 과정
 ### 8.137: User get 요청 구현
 
 ### 8.138: User post 요청 구현
-@RequestBody를 통해 웹 요청의 body와 매게변수를 맵핑한다.
+@RequestBody를 통해 웹 요청의 body와 매게변수를 맵핑한다
+
+### 8.139: HTTP Status Code
+ResponseEntity<Entity>를 이용해 HTTP Status Code를 지정
+
+location 헤더: 생성된 리소스의 URL을 반환할 때 사용하는 HTTP 헤더. 이를 ReponseEntity.created(location) 처럼 활용한다
+
