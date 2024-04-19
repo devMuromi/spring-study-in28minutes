@@ -3,3 +3,6 @@
 - @RestController: REST API용 Controller임을 나타냄
 - @RequestMapping(method, path): HTTP Method와 URI를 매핑
 - @GetMapping(path): HTTP GET Method와 매핑
+
+### 8.131: Json return
+Bean을 return하면 자동으로 JSON으로 변환됨.
