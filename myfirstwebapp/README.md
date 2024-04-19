@@ -117,3 +117,5 @@ data.sql의 내용은 기본적으로 엔티티가 제작되기 전에 시작됨
 ### 7.120: JPA Repository
 
 ### 7.121: Controller refactoring
+
+### 7.126: Docker, MySQL 연결
