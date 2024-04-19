@@ -12,6 +12,10 @@ import java.time.LocalDate;
 @Entity
 public class Todo {
 
+    public Todo() {
+        super();
+    }
+
     @Id
     @GeneratedValue
     private int id;
