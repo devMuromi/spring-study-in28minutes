@@ -35,3 +35,6 @@ ResponseEntity<Entity>를 이용해 HTTP Status Code를 지정
 
 location 헤더: 생성된 리소스의 URL을 반환할 때 사용하는 HTTP 헤더. 이를 ReponseEntity.created(location) 처럼 활용한다
 
+### 8.140: Exception Handling
+UserNotFoundException 제작, @ResponseStatus(code = HttpStatus.NOT_FOUND)로 exception에 상태 코드 지정하기
+
