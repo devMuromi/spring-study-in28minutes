@@ -19,3 +19,6 @@ Json으로 변환되는 과정
 
 오류 맵핑을 하는 곳
 - ErrorMvcAutoConfiguration에 따라서: Spring Boot가 자동 설정한 것
+
+### 8.133: Path variable 다루기
+@PathVariable 를 매게변수에 붙이면 URI의 일부를 매개변수로 받을 수 있다
