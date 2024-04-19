@@ -92,3 +92,6 @@ spring-boot-starter-validation 추가
 
 ### 7.113: Spring Boot Starter Security
 spring-boot-starter-security 추가
+
+### 7.114: Spring Security
+InMemoryUserDetailsManager와 BCryptPasswordEncoder를 이용해 사용자 인증을 추가한다.
