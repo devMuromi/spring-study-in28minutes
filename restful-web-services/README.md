@@ -22,3 +22,5 @@ Json으로 변환되는 과정
 
 ### 8.133: Path variable 다루기
 @PathVariable 를 매게변수에 붙이면 URI의 일부를 매개변수로 받을 수 있다
+
+### 8.135: User Bean, Dao 생성
