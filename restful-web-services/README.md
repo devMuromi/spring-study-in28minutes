@@ -44,3 +44,7 @@ Spring의 예외 처리는 ResponseStatusExceptionHandler가 담당한다.
 
 ### 8.143: User delete 요청 구현
 
+### 8.144: 유효성 검증
+org.springframework.boot:spring-boot-starter-validation 추가
+
+매게변수에 @Valid, entity field에 @Size, @Past 등 설정 
