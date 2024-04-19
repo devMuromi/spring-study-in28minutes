@@ -1,5 +1,6 @@
 package com.devmuromi.springboot.myfirstwebapp.todo;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -23,8 +24,17 @@ public class TodoService {
         return todos;
     }
 
+    public Todo findById(int id) {
+        return todos.stream().filter(todo -> todo.getId() == id).findFirst().get();
+    }
+
     public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
         todos.add(new Todo(++todosCount, username, description, targetDate, done));
+    }
+
+    public void updateTodo(@Valid Todo todo) {
+        deleteById(todo.getId());
+        todos.add(todo);
     }
 
     public void deleteById(int id) {
