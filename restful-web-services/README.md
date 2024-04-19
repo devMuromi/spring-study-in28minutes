@@ -38,3 +38,6 @@ location 헤더: 생성된 리소스의 URL을 반환할 때 사용하는 HTTP �
 ### 8.140: Exception Handling
 UserNotFoundException 제작, @ResponseStatus(code = HttpStatus.NOT_FOUND)로 exception에 상태 코드 지정하기
 
+### 8.142: Exception Handling advance
+Spring의 예외 처리는 ResponseStatusExceptionHandler가 담당한다.
+이를 오버라이드해 우리가 정의한 구조가 반환되게 해야 한다.
