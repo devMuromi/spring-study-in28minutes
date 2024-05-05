@@ -56,3 +56,10 @@ org.springdoc:springdoc-openapi-starter-webmvc-ui 추가
 com.fasterxml.jackson.dataformat:jackson-dataformat-xml 추가
 
 Accept 헤더를 통해 json, xml등 반환 형식에 대한 요청 가능
+
+### 8.150: Internationalization
+i18n이라고도 부른다.
+Accept-Language 헤더를 통해 언어 설정 가능
+
+Locale locale = LocaleContextHolder.getLocale(); 로 요청에서 언어 정보를 가져오고
+messageSource.getMessage() 로 messages_xx.properties에서 메세지를 가져온다
