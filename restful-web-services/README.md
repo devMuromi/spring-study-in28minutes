@@ -64,5 +64,14 @@ Accept-Language 헤더를 통해 언어 설정 가능
 Locale locale = LocaleContextHolder.getLocale(); 로 요청에서 언어 정보를 가져오고
 messageSource.getMessage() 로 messages_xx.properties에서 메세지를 가져온다
 
-### 8.152: API 버전 관리
-버저닝 방식들: URL, Request Parameter, Header, Media Type
+### 8.152, 153: API 버전 관리
+버저닝 방식들: URI, Request Parameter, Header, Media Type
+
+여러 버저닝 방식들 고려할 사항
+- URI pollution: URI가 복잡해지는 문제. URI나 Request Parameter로 버전을 관리할 경우
+- Misuse of HTTP Headers: 원래 헤더는 버전관리용이 아니다. Header, Media Type로 버전을 관리할 경우
+- Caching: 버전이 바뀌었는데 같은 URI이면 캐싱이 되어있으면 문제가 생길 수 있다. Header, Media Type로 버전을 관리할 경우
+- 브라우저에서 작동하는지: Header, Media Type로 버전을 관리할 경우 쉽게 사용할 수 없다
+- API Documentation: API 문서툴은 Header와 Media Type에 따른 구분을 잘 못할 수 있다.
+
+완벽한 방법은 없으나, 같은 방식을 사용하는것이 중요하다. 
