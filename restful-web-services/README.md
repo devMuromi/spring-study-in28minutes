@@ -63,3 +63,6 @@ Accept-Language 헤더를 통해 언어 설정 가능
 
 Locale locale = LocaleContextHolder.getLocale(); 로 요청에서 언어 정보를 가져오고
 messageSource.getMessage() 로 messages_xx.properties에서 메세지를 가져온다
+
+### 8.152: API 버전 관리
+버저닝 방식들: URL, Request Parameter, Header, Media Type
