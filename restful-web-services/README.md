@@ -23,7 +23,7 @@ Json으로 변환되는 과정
 ### 8.133: Path variable 다루기
 @PathVariable 를 매게변수에 붙이면 URI의 일부를 매개변수로 받을 수 있다
 
-### 8.135: User Bean, Dao 생성
+### 8.135: User Bean, Dao(Data Access Object) 생성
 
 ### 8.137: User get 요청 구현
 
@@ -50,3 +50,9 @@ org.springframework.boot:spring-boot-starter-validation 추가
 매게변수에 @Valid, entity field에 @Size, @Past 등 설정 
 
 ### 8.148: Open API, Swagger
+org.springdoc:springdoc-openapi-starter-webmvc-ui 추가
+
+### 8.149: XML 지원
+com.fasterxml.jackson.dataformat:jackson-dataformat-xml 추가
+
+Accept 헤더를 통해 json, xml등 반환 형식에 대한 요청 가능
