@@ -153,3 +153,9 @@ application.properties에 MySQL 설정 추가
     spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 ```
 
+### 5.172: Spring Security
+org.springframework.boot:spring-boot-starter-security 추가
+
+
+
+
