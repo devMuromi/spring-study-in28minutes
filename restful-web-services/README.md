@@ -74,4 +74,12 @@ messageSource.getMessage() 로 messages_xx.properties에서 메세지를 가져�
 - 브라우저에서 작동하는지: Header, Media Type로 버전을 관리할 경우 쉽게 사용할 수 없다
 - API Documentation: API 문서툴은 Header와 Media Type에 따른 구분을 잘 못할 수 있다.
 
-완벽한 방법은 없으나, 같은 방식을 사용하는것이 중요하다. 
+완벽한 방법은 없으나, 같은 방식을 사용하는것이 중요하다.
+
+### 8.154: HATEOAS(Hypermedia as the Engine of Application State)
+HAL(JSON Hypertext Application Language): 하이퍼링크를 제공하는 포맷(규격)
+
+스프링 HATEOAS를 사용해본다. org.springframework.boot:spring-boot-starter-hateoas
+
+- EntityModel: 엔티티를 맵핑
+- WebMvcLinkBuilder: 컨트롤러 메소드에 따른 url을 가져오기
