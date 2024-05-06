@@ -122,3 +122,34 @@ mappedBy = "user"로 인해 user_id가 post에 자동으로 생성된다.
 ### 8.164: Post get
 
 ### 8.165: Post post
+
+### 8.166: JPA, Hybernate가 만든 쿼리 살펴보기
+
+### 8.167 ~ 171: MySQL 연동, Docker
+Docker로 MySQL 실행
+```shell
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=social-media-user --env MYSQL_PASSWORD=dummypassword --env MYSQL_DATABASE=social-media-database --name mysql --publish 3306:3306 mysql:8-oracle
+```
+mysqlsh 명령어
+```shell
+    mysqlsh
+    \connect social-media-user@localhost:3306
+    \sql
+    use social-media-database
+    select * from user_details;
+    select * from post;
+    \quit
+```
+gradle에 com.mysql:mysql-connector-j 추가
+
+application.properties에 MySQL 설정 추가
+```properties
+    #spring.datasource.url=jdbc:h2:mem:testdb
+    spring.jpa.show-sql=true
+    spring.datasource.url=jdbc:mysql://localhost:3306/social-media-database
+    spring.datasource.username=social-media-user
+    spring.datasource.password=dummypassword
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+```
+
