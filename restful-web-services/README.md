@@ -108,3 +108,8 @@ org.springframework.data:spring-data-rest-hal-explorer 추가
 ### 8.161: User entity, 테스트 데이터 추가
 JPA에서 엔티리를 관리할 수 있게 엔티티에 @Entity 추가
 
+### 8.162: UserRepository 추가
+UserRepository interface 생성.
+JPA 사용시에는 User에 기본 생성자가 있어야 한다
+
+

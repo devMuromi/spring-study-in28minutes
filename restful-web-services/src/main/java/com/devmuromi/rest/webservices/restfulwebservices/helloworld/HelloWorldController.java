@@ -1,4 +1,4 @@
-package com.devmuromi.rest.webservices.restfulwebservices;
+package com.devmuromi.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
