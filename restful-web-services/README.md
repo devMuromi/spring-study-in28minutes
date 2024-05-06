@@ -83,3 +83,10 @@ HAL(JSON Hypertext Application Language): 하이퍼링크를 제공하는 포맷
 
 - EntityModel: 엔티티를 맵핑
 - WebMvcLinkBuilder: 컨트롤러 메소드에 따른 url을 가져오기
+
+### 8.155: REST API 정적 필터링
+- Serialization: 객체를 스트림으로 변환. EntityModel, 객체등을 JSON, XML으로 변환. 흔히 쓰이는건 Jackson
+- reponse시 필드명 변경하기: @JSONProperty("name")으로 변경 가능
+- 선택한 필드만 반환하기: 필터링 가능. 동적/정적 필터링이 존재한다.
+- Static Filtering: @JsonIgnore(필드에 지정, 권장), @JsonIgnoreProperties(클래스에 지정) 사용
+- Dynamic Filtering: @JsonFilter 사용
