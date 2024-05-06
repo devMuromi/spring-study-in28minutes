@@ -105,3 +105,6 @@ org.springframework.data:spring-data-rest-hal-explorer 추가
 
 이후 localhost:8080 에서 확인 가능
 
+### 8.161: User entity, 테스트 데이터 추가
+JPA에서 엔티리를 관리할 수 있게 엔티티에 @Entity 추가
+
