@@ -153,10 +153,10 @@ application.properties에 MySQL 설정 추가
     spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 ```
 
-### 5.172: Spring Security
+### 8.172: Spring Security
 org.springframework.boot:spring-boot-starter-security 추가
 
-### 5.173: Spring Security 개선
+### 8.173: Spring Security 개선
 Spring Security는 훌륭하지만, CSRF로 인해 POST, PUT 요청이 바로 안된다.
 또한 REST API를 위한 인증 방식이 필요하다.
 
