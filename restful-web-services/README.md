@@ -90,3 +90,9 @@ HAL(JSON Hypertext Application Language): 하이퍼링크를 제공하는 포맷
 - 선택한 필드만 반환하기: 필터링 가능. 동적/정적 필터링이 존재한다.
 - Static Filtering: @JsonIgnore(필드에 지정, 권장), @JsonIgnoreProperties(클래스에 지정) 사용
 - Dynamic Filtering: @JsonFilter 사용
+
+### 8.156: REST API 동적 필터링
+- MappingJacksonValue: 를 이용해 데이터 외에 직렬화 논리도 추가 가능
+- SimpleBeanPropertyFilter filter: 직렬화 로직 정의
+- FilterProvider filters: 필터 정의
+- JsonFilter: 엔티티에 적용할 필터 이름
