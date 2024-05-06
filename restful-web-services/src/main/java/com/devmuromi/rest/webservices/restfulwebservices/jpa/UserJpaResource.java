@@ -1,5 +1,6 @@
 package com.devmuromi.rest.webservices.restfulwebservices.jpa;
 
+import com.devmuromi.rest.webservices.restfulwebservices.user.Post;
 import com.devmuromi.rest.webservices.restfulwebservices.user.User;
 import com.devmuromi.rest.webservices.restfulwebservices.user.UserNotFoundException;
 import jakarta.validation.Valid;
@@ -52,5 +53,15 @@ public class UserJpaResource {
     @DeleteMapping("/jpa/users/{id}")
     public void deleteUser(@PathVariable int id) {
         repository.deleteById(id);
+    }
+
+    @GetMapping("/jpa/users/{id}/posts")
+    public List<Post> retrievePostsForUser(@PathVariable int id) {
+        Optional<User> user = repository.findById(id);
+        if (user.isEmpty()) {
+            throw new UserNotFoundException("id: " + id);
+        }
+
+        return user.get().getPosts();
     }
 }
