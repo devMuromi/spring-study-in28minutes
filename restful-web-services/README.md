@@ -96,3 +96,12 @@ HAL(JSON Hypertext Application Language): 하이퍼링크를 제공하는 포맷
 - SimpleBeanPropertyFilter filter: 직렬화 로직 정의
 - FilterProvider filters: 필터 정의
 - JsonFilter: 엔티티에 적용할 필터 이름
+
+### 8.157: Spring Boot Actuator
+org.springframework.boot:spring-boot-starter-actuator 추가
+
+### 8.158: Spring Boot HAL Explorer
+org.springframework.data:spring-data-rest-hal-explorer 추가
+
+이후 localhost:8080 에서 확인 가능
+
