@@ -1,5 +1,7 @@
-package com.devmuromi.rest.webservices.restfulwebservices.jpa;
+package com.devmuromi.rest.webservices.restfulwebservices.user;
 
+import com.devmuromi.rest.webservices.restfulwebservices.jpa.PostRepository;
+import com.devmuromi.rest.webservices.restfulwebservices.jpa.UserRepository;
 import com.devmuromi.rest.webservices.restfulwebservices.user.Post;
 import com.devmuromi.rest.webservices.restfulwebservices.user.User;
 import com.devmuromi.rest.webservices.restfulwebservices.user.UserNotFoundException;
@@ -17,11 +19,14 @@ import java.util.Optional;
 @RestController
 public class UserJpaResource {
 
-    public UserJpaResource(UserRepository repository) {
-        this.repository = repository;
-    }
-
     private UserRepository repository;
+
+    private PostRepository postRepository;
+
+    public UserJpaResource(UserRepository repository, PostRepository postRepository) {
+        this.repository = repository;
+        this.postRepository = postRepository;
+    }
 
     @GetMapping("/jpa/users")
     public List<User> retrieveAllUsers() {
@@ -61,7 +66,20 @@ public class UserJpaResource {
         if (user.isEmpty()) {
             throw new UserNotFoundException("id: " + id);
         }
-
         return user.get().getPosts();
+    }
+
+    @PostMapping("/jpa/users/{id}/posts")
+    public ResponseEntity<Object> createPostForUser(@PathVariable int id, @Valid @RequestBody Post post) {
+        Optional<User> user = repository.findById(id);
+        if (user.isEmpty()) {
+            throw new UserNotFoundException("id: " + id);
+        }
+
+        post.setUser(user.get());
+        Post savedPost = postRepository.save(post);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedPost.getId()).toUri();
+        return ResponseEntity.created(location).build();
     }
 }

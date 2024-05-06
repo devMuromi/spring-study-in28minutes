@@ -118,3 +118,7 @@ JPA 사용시에는 User에 기본 생성자가 있어야 한다
 이때 fetch 속성을 통해 지연 로딩/즉시 로딩 여부를 결정 가능. 기본은 eager. 굳이 바로 같이 가져올 필요가 없으니 lazy로 설정한다.
 
 mappedBy = "user"로 인해 user_id가 post에 자동으로 생성된다.
+
+### 8.164: Post get
+
+### 8.165: Post post
