@@ -156,6 +156,11 @@ application.properties에 MySQL 설정 추가
 ### 5.172: Spring Security
 org.springframework.boot:spring-boot-starter-security 추가
 
+### 5.173: Spring Security 개선
+Spring Security는 훌륭하지만, CSRF로 인해 POST, PUT 요청이 바로 안된다.
+또한 REST API를 위한 인증 방식이 필요하다.
+
+이를 재정의 해주기 위해 Spring security에서는 전체 필터 체인을 재정의 해주어야 한다.
 
 
 
