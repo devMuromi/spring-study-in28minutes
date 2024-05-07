@@ -7,3 +7,5 @@
 ### 12.232: Get todo, Delete todo 추가
 
 ### 12.239: Put todo, Post todo 추가
+
+### 12.242: Spring Security 설정
