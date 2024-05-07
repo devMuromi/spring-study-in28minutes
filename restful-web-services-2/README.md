@@ -9,3 +9,5 @@
 ### 12.239: Put todo, Post todo 추가
 
 ### 12.242: Spring Security 설정
+
+### 12.245: OPTIONS 요청 허용하게 설정 변경
