@@ -3,3 +3,5 @@
 ### 12.226: corsConfigurer() 추가
 
 ### 12.230: TodoController 추가
+
+### 12.232: Get todo, Delete todo 추가
