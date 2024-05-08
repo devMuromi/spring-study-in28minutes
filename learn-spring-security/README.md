@@ -23,3 +23,11 @@ Spring security는 기본적으로 모든 리소스를 보호하고, 존재하�
 
 기본적으로 Spring security는 폼 인증을 사용한다.
 - 폼 인증: 유저:비번 로그인 -> 세션 쿠키 생성 -> 세션 쿠키로 인증
+
+### 16.283: Basic Authentication
+- Basic 인증
+  - REST API에서 가장 기본적으로 사용하는 방식
+  - 단점이 많아서 프로덕션용으로 비추 -> JWT 사용
+  - base64로 인코딩된 username:password를 Authorization 헤더에 담아 보낸다
+  - 권한 부여 정보는 안담겨 있음
+  - 만료일 없음
