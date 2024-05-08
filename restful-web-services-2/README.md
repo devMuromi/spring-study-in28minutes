@@ -20,3 +20,6 @@ org.springframework.boot:spring-boot-configuration-processor 추가
 
 ### 13.256: JPA, Hibernate 의존성 추가
 org.springframework.boot:spring-boot-starter-data-jpa 추가
+
+### 13.257: @Entity, DB 설정 추가
+Todo @Entity 추가
