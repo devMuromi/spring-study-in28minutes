@@ -63,3 +63,8 @@ csrf 해제하기
     - STATELESS: 세션 생성하지 않음, 사용도 안함
   - http.csrf().disable(); CSRF 해제
   - http.formLogin(); 폼 로그인. 사용하지 않으면 더이상 /login /logout 페이지를 사용할 수 없다.
+
+### 16.287: CORS
+- CORS 허용하는 방법
+  - 글로벌 설정. addCorsMappings callback method를 WebMvcConfigurer에 추가
+  - 컨트롤러별 설정. @CrossOrigin 사용
