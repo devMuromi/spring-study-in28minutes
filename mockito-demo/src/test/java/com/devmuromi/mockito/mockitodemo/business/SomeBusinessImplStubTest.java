@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SomeBusinessImplTest {
+public class SomeBusinessImplStubTest {
     @Test
     public void testFindTheGreatestFromAllData_basicScenario() {
         DataServiceStub dataServiceStub = new DataServiceStub();
