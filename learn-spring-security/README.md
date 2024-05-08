@@ -48,3 +48,18 @@ SpringSecurityPlayResource에서 CSRF 토큰을 획득해, POST 요청의 X-CSRF
 이렇게 CSRF를 방지하기 위해 CSRF token을 사용하는 방법을 알아보았다.
 
 다만 세션을 사용하지 않는다면 CSRF token은 필요 없다. 즉 상태를 저장하지 않는 REST API에서는 CSRF token을 사용하지 않아도 된다.
+
+### 16.286: Disable CSRF
+동기화 토큰 방식이 아닌 Samesite cookie를 이용해 CSRF를 방지할 수 있다.
+- server.servlet.session.cookie.same-site=strict
+
+csrf 해제하기
+- filterChain
+  - http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
+  - http.sessionManagement 의 SessionCreationPolicy
+    - ALWAYS: 항상 세션 생성
+    - IF_REQUIRED: 필요할때만 세션 생성
+    - NEVER: 세션 생성하지 않음. 다만 있으면 사용
+    - STATELESS: 세션 생성하지 않음, 사용도 안함
+  - http.csrf().disable(); CSRF 해제
+  - http.formLogin(); 폼 로그인. 사용하지 않으면 더이상 /login /logout 페이지를 사용할 수 없다.
