@@ -19,3 +19,5 @@ when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {24, 15, 3});
 - @ExtendWith(MockitoExtension.class): mockito를 사용하기 위해 필요하다
 - @Mock: mock을 쉽게 생성한다
 - @InjectMocks: Mockito가 mock을 주입하게 한다
+
+### 15.274: Advanced Mock
