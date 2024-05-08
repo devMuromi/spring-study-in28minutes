@@ -31,3 +31,8 @@ Spring security는 기본적으로 모든 리소스를 보호하고, 존재하�
   - base64로 인코딩된 username:password를 Authorization 헤더에 담아 보낸다
   - 권한 부여 정보는 안담겨 있음
   - 만료일 없음
+
+### 16.284: CSRF(Cross Site Request Forgery)
+저장되어 있는 쿠키를 악성 웹사이트가 엑세스해서 위조 요청을 보내는것을 막기 위한 방법
+- 이를 해결하기 위한 방법들
+  - Synchronizer Token Pattern: 요청마다 토큰을 생성하는 것. 즉 POST, PUT등을 할일이 있으면 이전 요청에서 생긴 토큰으로 처리(Spring Security 기본값)
