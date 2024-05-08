@@ -79,3 +79,9 @@ csrf 해제하기
   - LDAP(Lightweight Directory Access Protocol)
 
 InMemoryUserDetailsManager 를 이용해 in memory credential을 사용할 수 있다.
+
+### 16.289: Credential with JDBC
+org.springframework.boot:spring-boot-starter-jdbc, com.h2database:h2 추가
+
+DataSource를 설정하고 JdbcUserDetailsManager를 사용해 JDBC로 credential을 저장할 수 있다.
+
