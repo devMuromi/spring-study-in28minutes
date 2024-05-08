@@ -15,3 +15,7 @@ when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {24, 15, 3});
 ```
 와 같이 mock을 사용할 수 있다.
 
+### 15.273: Mockito Annotations
+- @ExtendWith(MockitoExtension.class): mockito를 사용하기 위해 필요하다
+- @Mock: mock을 쉽게 생성한다
+- @InjectMocks: Mockito가 mock을 주입하게 한다
