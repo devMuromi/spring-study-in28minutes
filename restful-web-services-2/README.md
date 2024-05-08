@@ -24,9 +24,13 @@ org.springframework.boot:spring-boot-starter-data-jpa 추가
 ### 13.257: @Entity, DB 설정 추가
 Todo @Entity 추가
 
-### 13.258: TodoRepository 추가
+### 13.258: TodoRepository 추가, RUD
 TodoRepository 추가
 
 - public List<Todo> findByUsername(String username); 로 username 필드로 탐색 가능
 - JPA의 findById(), deleteById() 이용해서 id탐색, 삭제는 편하게 구현 가능
 - JPA에 update() 메소드는 따로 없는데, save() 메소드로 update() 가능
+
+### 13.259: Todo Create 구현
+기존 Todo의 key인 id는 int인데, JPA는 key값이 null일때 update가 아닌 생성을 진행한다.
+즉 id가 null값을 가질 수 있게, wrapper class인 Integer로 변경해준다.
