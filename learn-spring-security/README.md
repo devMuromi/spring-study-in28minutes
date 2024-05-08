@@ -17,3 +17,9 @@ filter chain의 기능들
 3. Authorization
 
 ### 16.281: Start Spring Security Project
+
+### 16.282: Form Authentication
+Spring security는 기본적으로 모든 리소스를 보호하고, 존재하지 않는 리소스도 보호해 리소스 존재 여부도 알 수 없게 한다.
+
+기본적으로 Spring security는 폼 인증을 사용한다.
+- 폼 인증: 유저:비번 로그인 -> 세션 쿠키 생성 -> 세션 쿠키로 인증
