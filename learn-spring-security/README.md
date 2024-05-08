@@ -68,3 +68,14 @@ csrf 해제하기
 - CORS 허용하는 방법
   - 글로벌 설정. addCorsMappings callback method를 WebMvcConfigurer에 추가
   - 컨트롤러별 설정. @CrossOrigin 사용
+
+### 16.288: In Memory Credential
+이때까지는 application.properties에 credential(user, password)를 저장했다.
+이제 메모리에 저장해보자
+
+- Credential 저장 방식
+  - In memory: production용으로는 비추천
+  - Database: JDBC/JPA
+  - LDAP(Lightweight Directory Access Protocol)
+
+InMemoryUserDetailsManager 를 이용해 in memory credential을 사용할 수 있다.
