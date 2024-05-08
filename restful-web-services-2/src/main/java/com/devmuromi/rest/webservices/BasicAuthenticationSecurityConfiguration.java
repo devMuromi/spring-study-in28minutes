@@ -8,7 +8,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
-@Configuration
+//@Configuration
 public class BasicAuthenticationSecurityConfiguration {
 
     @Bean
@@ -19,9 +19,7 @@ public class BasicAuthenticationSecurityConfiguration {
                 .sessionManagement(
                 session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                .csrf().disable()
-                .build();
-
+                .csrf().disable();
         return http.build();
     }
 }

@@ -11,3 +11,8 @@
 ### 12.242: Spring Security 설정
 
 ### 12.245: OPTIONS 요청 허용하게 설정 변경
+
+### 12.252: JWT
+org.springframework.boot:spring-boot-starter-oauth2-resource-server,
+org.springframework.boot:spring-boot-configuration-processor 추가
+
