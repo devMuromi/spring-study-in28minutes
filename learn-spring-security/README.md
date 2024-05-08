@@ -85,3 +85,8 @@ org.springframework.boot:spring-boot-starter-jdbc, com.h2database:h2 추가
 
 DataSource를 설정하고 JdbcUserDetailsManager를 사용해 JDBC로 credential을 저장할 수 있다.
 
+### 16.291: BCrypt Password Encoder
+- 최근에는 SHA-256도 안전하지 않음
+- 권장 사항은 one way hash function, 1초 이상의 work factor
+- PasswordEncoder: 단방향 패스워드 변환하는 interface
+  - BCryptPasswordEncoder

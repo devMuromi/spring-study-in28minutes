@@ -9,6 +9,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -55,13 +56,26 @@ public class BasicAuthSecurityConfiguration {
     public UserDetailsService userDetailsService(DataSource dataSource) {
 
         // USER, ADMIN 대신 enum.ROLE_USER, enum.ROLE_ADMIN 사용하는 것이 best practice
-        var user = User.withUsername("pomato").password("{noop}password").roles("USER").build();
-        var admin = User.withUsername("muromi").password("{noop}password").roles("ADMIN").build();
+        var user = User.withUsername("pomato")
+//                .password("{noop}password")
+                .password("password")
+                .passwordEncoder(str -> passwordEncoder().encode(str))
+                .roles("USER").build();
+        var admin = User.withUsername("muromi")
+//                .password("{noop}password")
+                .password("password")
+                .passwordEncoder(str -> passwordEncoder().encode(str))
+                .roles("ADMIN").build();
 
         var jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
         jdbcUserDetailsManager.createUser(user);
         jdbcUserDetailsManager.createUser(admin);
 
         return jdbcUserDetailsManager;
+    }
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }
