@@ -30,3 +30,6 @@ in28Minutes의 Master Spring Boot 3 & Spring Framework 6 with Java 강좌
 
 ## Section 12: Connect React Todo App with Spring Boot REST API
 - restful-web-services-2
+
+## Section 13: Connect Todo REST API using JPA & Hibernate
+- restful-web-services-2

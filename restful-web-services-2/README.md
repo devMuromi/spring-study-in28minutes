@@ -16,3 +16,7 @@
 org.springframework.boot:spring-boot-starter-oauth2-resource-server,
 org.springframework.boot:spring-boot-configuration-processor 추가
 
+## Section 13: Connect Todo REST API using JPA & Hibernate
+
+### 13.256: JPA, Hibernate 의존성 추가
+org.springframework.boot:spring-boot-starter-data-jpa 추가
