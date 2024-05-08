@@ -34,3 +34,10 @@ TodoRepository 추가
 ### 13.259: Todo Create 구현
 기존 Todo의 key인 id는 int인데, JPA는 key값이 null일때 update가 아닌 생성을 진행한다.
 즉 id가 null값을 가질 수 있게, wrapper class인 Integer로 변경해준다.
+
+### 13.261: MySQL 연결
+```shell
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 mysql:8-oracle
+```
+다른 설정들은 전에 이미 많이 나왔던 것. commit 참고하기.
+Security 쪽에서 h2 의존되어 있는 부분에서 오류 발생하는 것 같은데 일단 넘어감.
