@@ -1,23 +1,24 @@
-package com.devmuromi.learnspringsecurity.basic;
+package com.devmuromi.learnspringsecurity.jwt;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.sql.DataSource;
 
-//@Configuration
-public class BasicAuthSecurityConfiguration {
+@Configuration
+public class JwtSecurityConfiguration {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -30,19 +31,12 @@ public class BasicAuthSecurityConfiguration {
         // http.formLogin();
         http.httpBasic();
         http.csrf().disable();
-        http.headers().frameOptions().disable(); // for h2-console
+        http.headers().frameOptions().sameOrigin();
+
+        http.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+
         return http.build();
     }
-
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//
-//        // USER, ADMIN 대신 enum.ROLE_USER, enum.ROLE_ADMIN 사용하는 것이 best practice
-//        var user = User.withUsername("pomato").password("{noop}password").roles("USER").build();
-//        var admin = User.withUsername("muromi").password("{noop}password").roles("ADMIN").build();
-//
-//        return new InMemoryUserDetailsManager(user, admin);
-//    }
 
     @Bean
     public DataSource dataSource() {
@@ -55,14 +49,11 @@ public class BasicAuthSecurityConfiguration {
     @Bean
     public UserDetailsService userDetailsService(DataSource dataSource) {
 
-        // USER, ADMIN 대신 enum.ROLE_USER, enum.ROLE_ADMIN 사용하는 것이 best practice
         var user = User.withUsername("pomato")
-//                .password("{noop}password")
                 .password("password")
                 .passwordEncoder(str -> passwordEncoder().encode(str))
                 .roles("USER").build();
         var admin = User.withUsername("muromi")
-//                .password("{noop}password")
                 .password("password")
                 .passwordEncoder(str -> passwordEncoder().encode(str))
                 .roles("ADMIN").build();
@@ -78,4 +69,9 @@ public class BasicAuthSecurityConfiguration {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+//    @Bean
+//    public JwtDecoder jwtDecoder() {
+//        return decoder;
+//    }
 }

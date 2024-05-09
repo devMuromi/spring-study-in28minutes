@@ -90,3 +90,20 @@ DataSource를 설정하고 JdbcUserDetailsManager를 사용해 JDBC로 credentia
 - 권장 사항은 one way hash function, 1초 이상의 work factor
 - PasswordEncoder: 단방향 패스워드 변환하는 interface
   - BCryptPasswordEncoder
+
+### 16.292: JWT Authentication
+JWT에서 key를 이용해 암호화와 복호화를 할 수 있다. JWT에서는 비대칭 키를 쓰는것이 정석.
+- JWT 생성: encoding -> user credentials, user data(payload), RSA key pair
+- Request header에 포함해서 전송
+
+### 16.293: JWT with Spring Security 1
+1. Create key pair
+2. Create RSA key object usin key pair
+3. Create JWKSource(JSON Web Key Source)
+4. Use RSA public key for decoding
+5. Use JWKSource for encoding
+
+org.springframework.boot:spring-boot-starter-oauth2-resource-server 추가
+
+- OAuth2 리소스 서버 설정 -> http.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+- 리소스 서버가 jwt를 받으면 디코드하기 위해 디코더 필요
