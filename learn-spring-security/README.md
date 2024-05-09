@@ -96,7 +96,7 @@ JWT에서 key를 이용해 암호화와 복호화를 할 수 있다. JWT에서�
 - JWT 생성: encoding -> user credentials, user data(payload), RSA key pair
 - Request header에 포함해서 전송
 
-### 16.293: JWT with Spring Security 1
+### 16.293: JWT Auth with Spring Security 1
 1. Create key pair
 2. Create RSA key object usin key pair
 3. Create JWKSource(JSON Web Key Source)
@@ -108,7 +108,7 @@ org.springframework.boot:spring-boot-starter-oauth2-resource-server 추가
 - OAuth2 리소스 서버 설정 -> http.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
 - 리소스 서버가 jwt를 받으면 디코드하기 위해 디코더 필요
 
-### 16.294: JWT with Spring Security 2
+### 16.294: JWT Auth with Spring Security 2
 openssl로 RSA public/private key pair 생성 가능.
 그러나 우리는 코드로 만들거고, java.security.KeyPairGenerator를 사용해 key pair를 생성한다.
 - KeyPairGenerator 를 이용해 키 페어 생성
@@ -116,3 +116,11 @@ openssl로 RSA public/private key pair 생성 가능.
 - 키 페어를 이용해 RSA 키 객체 생성
 - JWKSource 만들기. JSON 키 여러개가 있는 JWKSet을 만들 수 있는데, 우리는 RSA key 하나만 넣고 만들것
 - 이후 JWKSet으로 JWKSource 만들기
+
+### 16.295: JWT Resource with Spring Security 1
+이떄까지는 JWT 검증을 다루었다. 이제 JWT를 만들어보자.
+JWT 생성을 위해 JWT 리소스를 만들것
+
+우선 기본인증을 통해 유저:비밀번호를 보내 JWT를 받고, 이후 REST API 인증에서는 JWT를 Bearer 토큰으로 활용할 것이다
+
+우선 basic 인증에서 Authentication을 받아서 리턴해본다
