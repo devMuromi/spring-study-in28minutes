@@ -38,3 +38,13 @@ org.springframework.boot:spring-boot-starter-aop 추가
   - @Pointcut("execution(* com.devmuromi.learnspringaop.aopexample.business.*.*(..))")
 
 - 특정 메소드 실행: JoinPoint
+
+### 17.309: AOP 용어
+- Advice: 실행할 코드
+  - Logging, Authentication 등
+- Pointcut: 인터셉트 하려는 메소드 호출
+  - execution(* com.devmuromi.learnspringaop.aopexample.*.*.*(..))
+- Aspect: Advice + Pointcut의 조합
+- Weaver: AOP를 구현한 프레임워크
+  - AspectJ, Spring AOP
+- Join Point: 어드바이스 실행 인스턴스

@@ -16,6 +16,6 @@ public class LoggingAspect {
     // @Before: 메소드가 호출되기 전에 실행
     @Before("execution(* com.devmuromi.learnspringaop.aopexample.*.*.*(..))")
     public void logMethodCall(JoinPoint joinPoint) {
-        logger.info("Before Aspect - Method is called - {}", joinPoint);
+        logger.info("Before Aspect - Method is called - {} is called with arguments: {}", joinPoint, joinPoint.getArgs());
     }
 }
