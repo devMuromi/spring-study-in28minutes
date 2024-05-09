@@ -17,7 +17,7 @@
 - AOP에선 우선 공통 관심사항을 aspect로 만든다.
     - logging도 aspect, security도 aspect
 - Aspect를 어디 적용할지 명시하는 로직을 정의한다.
-    - Point cut
+    - Pointcut
 
 Spring에는 유명한 AOP용 라이브러리가 2개 존재한다.
 - Spring AOP
@@ -29,3 +29,12 @@ Spring에는 유명한 AOP용 라이브러리가 2개 존재한다.
 
 ### 17.307: Create Spring Components
 비즈니스 서비스, 데이터 서비스 구축
+
+### 17.308: Create Logging Aspect and Pointcut
+org.springframework.boot:spring-boot-starter-aop 추가
+
+- 로직: 무엇을 할지
+- 포인트컷: 언제 로직을 호출할지
+  - @Pointcut("execution(* com.devmuromi.learnspringaop.aopexample.business.*.*(..))")
+
+- 특정 메소드 실행: JoinPoint
