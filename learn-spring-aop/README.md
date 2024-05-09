@@ -26,3 +26,6 @@ Spring에는 유명한 AOP용 라이브러리가 2개 존재한다.
     - 완벽한 ERP 솔루션인데 잘 안쓴다.
     - 유연성 높음.
     - 아무 Java class로의 method call을 intercept 가능
+
+### 17.307: Create Spring Components
+비즈니스 서비스, 데이터 서비스 구축
