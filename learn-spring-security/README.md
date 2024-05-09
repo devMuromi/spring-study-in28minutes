@@ -124,3 +124,6 @@ JWT 생성을 위해 JWT 리소스를 만들것
 우선 기본인증을 통해 유저:비밀번호를 보내 JWT를 받고, 이후 REST API 인증에서는 JWT를 Bearer 토큰으로 활용할 것이다
 
 우선 basic 인증에서 Authentication을 받아서 리턴해본다
+
+### 16.296: JWT Resource with Spring Security 2
+JwtAuthenticationResource 참고
