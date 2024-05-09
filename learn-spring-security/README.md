@@ -141,3 +141,24 @@ authenticate() 메소드 호출 전에는 Authentication에는 자격 증명만 
 - AuthenticationManager는 인증을 하며 수많은 AuthenticationProvider들과 상호작용을 한다. 우리는 JwtAuthenticationProvider를 사용했다
 - AuthenticationProvider들이 대화하는 인터페이스가 UserDetailsService이다. 
 - 인증에 성공했을때 인증 결과는 SecurityContextHolder에 저장된다. 그 안에는 SecurityContext가 있다. SecurityContext안에 Authentication이 저장된다.
+
+### 16.298: Exploring Spring Security Authentication
+Spring Security 인증에는 두가지 접근법이 있다
+- Global Security
+  - authorizeHttpRequests에서 설정 가능
+  - auth.requestMatchers("/users/").hasRole("USER") 등으로 설정가능
+  - hasRole, hasAuthority, hasAnyAuthority, isAuthenticated 등의 매처 사용 가능
+- Method Security
+  - @EnableMethodSecurity 로 활성화 가능
+  - @Pre, @Post 어노테이션 사용 가능
+    - @PreAuthorize("hasRole('USER') and #username == authentication.name") 등으로 설정가능
+    - @PostAuthorize("returnObject.username == 'muromi'") 등으로 리턴 객체 검증가능
+  - JSR-250 annotations
+    - @EnableMethodSecurity(jsr250Enabled = true) 로 활성화 
+    - @RolesAllowed({"ADMIN", "USER"}) 등으로 설정가능
+  - 과거의 @Secured annotation도 사용 가능
+    - @EnableMethodSecurity(securedEnabled = true) 로 활성화
+    - @Secured({"ADMIN", "USER"}) 등
+
+추천하는건 @Pre, @Post. 유연성이 높아지고 요즘 자주 쓰는 방식.
+표준을 준수해야한다면 JSR-250도 좋다.

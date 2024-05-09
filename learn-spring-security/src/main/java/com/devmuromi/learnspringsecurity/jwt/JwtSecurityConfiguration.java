@@ -32,7 +32,7 @@ import com.nimbusds.jose.jwk.RSAKey;
 
 import com.nimbusds.jose.jwk.JWKSet;
 
-@Configuration
+//@Configuration
 public class JwtSecurityConfiguration {
 
     @Bean
