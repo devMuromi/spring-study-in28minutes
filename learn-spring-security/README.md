@@ -107,3 +107,12 @@ org.springframework.boot:spring-boot-starter-oauth2-resource-server 추가
 
 - OAuth2 리소스 서버 설정 -> http.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
 - 리소스 서버가 jwt를 받으면 디코드하기 위해 디코더 필요
+
+### 16.294: JWT with Spring Security 2
+openssl로 RSA public/private key pair 생성 가능.
+그러나 우리는 코드로 만들거고, java.security.KeyPairGenerator를 사용해 key pair를 생성한다.
+- KeyPairGenerator 를 이용해 키 페어 생성
+- RSA 인코딩/디코딩을 위해 nimbus 라이브러리 사용
+- 키 페어를 이용해 RSA 키 객체 생성
+- JWKSource 만들기. JSON 키 여러개가 있는 JWKSet을 만들 수 있는데, 우리는 RSA key 하나만 넣고 만들것
+- 이후 JWKSet으로 JWKSource 만들기
