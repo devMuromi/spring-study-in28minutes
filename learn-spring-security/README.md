@@ -127,3 +127,17 @@ JWT 생성을 위해 JWT 리소스를 만들것
 
 ### 16.296: JWT Resource with Spring Security 2
 JwtAuthenticationResource 참고
+
+### 16.297: Spring Security Authentication
+- AuthenticationManager: 인증을 담당하는 인터페이스. 요청에 대해 인증을 시도하고, Authentication 객체와 권한을 반환
+
+Spring Security에서 인증이란
+1. 자격 증명(credentials): username, password
+2. 주체(principal): 사용자에 대한 세부정보
+3. 권한(authorities): 사용자가 가지고 있는 권한
+
+authenticate() 메소드 호출 전에는 Authentication에는 자격 증명만 포함되어 있다. 성공적으로 실행되면 주체와 권한도 포함하게 된다.
+
+- AuthenticationManager는 인증을 하며 수많은 AuthenticationProvider들과 상호작용을 한다. 우리는 JwtAuthenticationProvider를 사용했다
+- AuthenticationProvider들이 대화하는 인터페이스가 UserDetailsService이다. 
+- 인증에 성공했을때 인증 결과는 SecurityContextHolder에 저장된다. 그 안에는 SecurityContext가 있다. SecurityContext안에 Authentication이 저장된다.
