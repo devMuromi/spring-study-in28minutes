@@ -6,4 +6,8 @@
 - Client application: Todo management app
 - Resource server: Google Drive
 - Authorization server: Google OAuth Server
-- 
+
+### 16.301: Login using Google
+앱을 위한 자격증명을 생성
+
+Authentication 에서 갖가지 정보를 볼 수 있다
